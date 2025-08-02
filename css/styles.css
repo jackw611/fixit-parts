@@ -190,10 +190,3 @@ footer .container {
   text-align: center;
 }
 
-footer .container p {
-  margin: 0 0 8px;
-}
-
-footer .container p:last-child {
-  margin-bottom: 0;
-}
