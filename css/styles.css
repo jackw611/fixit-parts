@@ -1,18 +1,191 @@
-:root { --fg:#111; --muted:#666; --bg:#fff; --accent:#1f6feb; }
-*{box-sizing:border-box} body{font-family:system-ui,Arial,sans-serif;margin:0;color:var(--fg);background:var(--bg)}
-a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-header,footer{padding:16px 20px;border-bottom:1px solid #eee} footer{border-top:1px solid #eee;border-bottom:none;color:var(--muted)}
-.container{max-width:1000px;margin:0 auto;padding:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{border:1px solid #eee;border-radius:8px;padding:12px;display:flex;flex-direction:column}
-.card img{width:100%;height:180px;object-fit:cover;border-radius:6px;background:#f7f7f7}
-.price{font-weight:600;margin-top:8px}
-.btn{display:inline-block;padding:10px 14px;border:1px solid var(--accent);border-radius:6px}
-.badge{font-size:12px;color:#fff;background:#555;border-radius:999px;padding:3px 8px;margin-left:6px}
-.meta{color:#666;font-size:14px}
-.hero{display:flex;gap:24px;flex-wrap:wrap}
-.hero img{width:340px;max-width:100%;border-radius:8px;border:1px solid #eee}
-.product h1{margin:12px 0 6px}
-.notice{background:#fafafa;border:1px solid #eee;border-radius:6px;padding:10px;margin:10px 0}
-pre.code{background:#0b1021;color:#e6e6e6;padding:10px;border-radius:6px;overflow:auto}
-small.dim{color:#777}
+/* Base colors and typography */
+:root {
+  --fg: #000;
+  --muted: #666;
+  --bg: #fff;
+  --accent: #0071e3;
+  --border: #e5e5e7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav a {
+  color: var(--fg);
+  margin-left: 24px;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: var(--accent);
+}
+
+.logo {
+  color: var(--fg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero-banner {
+  background: #f5f5f7;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-banner .container {
+  padding: 0;
+}
+
+.hero-banner h1 {
+  font-size: 2.8rem;
+  margin: 0 0 20px;
+}
+
+.hero-banner p {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 24px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f7f7f7;
+}
+
+.price {
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.hero {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero img {
+  width: 340px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.product h1 {
+  margin: 12px 0 6px;
+}
+
+.notice {
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+pre.code {
+  background: #0b1021;
+  color: #e6e6e6;
+  padding: 10px;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+small.dim {
+  color: var(--muted);
+}
+
+footer {
+  background: #f5f5f7;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
