@@ -1,0 +1,64 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="/css/styles.css">
+<header><div class="container"><a href="/index.html"><strong>FixIt Parts</strong></a><span class="badge">Beta</span></div></header>
+<section class="container product">
+  <div class="hero">
+    <img src="https://files.printables.com/media/prints/256337/stls/2298698_e4a0fdfd-9b3a-4a85-877c-de9a1c4d0b44/sunsade-end-cap_preview.png" alt="Window Blind Bottom-Rail End Cap – 25 mm thumbnail">
+    <div style="flex:1;min-width:260px">
+      <h1>Window Blind Bottom-Rail End Cap – 25 mm</h1>
+      <div class="meta">Window Accessories</div>
+      <div class="price">$19</div>
+      <p>Snap-in PETG cap for 25 mm (1”) mini-blind bottom rails.</p>
+      <div class="notice"><small>License: CC0 (Public Domain) | Source: <a href="https://www.printables.com/model/256337-window-shade-end-cap">https://www.printables.com/model/256337-window-shade-end-cap</a><br>Designer: Unknown</small></div>
+      <!-- PayPal -->
+      <script src="https://www.paypal.com/sdk/js?client-id=sb-00000000000000000000000000000000&currency=USD&components=buttons"></script>
+      <div id="paypal-button-container"></div>
+      <script>
+      paypal.Buttons({
+        style:{layout:'vertical'},
+        createOrder:(_,actions)=>actions.order.create({
+          purchase_units:[{amount:{value:"19"}, description:"Window Blind Bottom-Rail End Cap – 25 mm"}],
+          application_context:{shipping_preference:"GET_FROM_FILE"}
+        }),
+        onApprove:(data,actions)=>actions.order.capture().then(()=>window.location='/thanks/index.html')
+      }).render('#paypal-button-container');
+      </script>
+      <p class="meta"><strong>Material:</strong> PETG; 0.2 mm; 3 perimeters; 25% infill; print flat.<br>
+      <strong>Compatibility:</strong> Generic 25 mm rails; verify width and tab spacing.</p>
+    </div>
+  </div>
+  <h3>Interactive 3D View</h3>
+  <div data-stl="https://files.printables.com/media/prints/256337/stls/2298698_e4a0fdfd-9b3a-4a85-877c-de9a1c4d0b44/sunsade-end-cap.stl" style="width:100%;height:360px;border:1px solid #eee;border-radius:6px"></div>
+  <!-- Viewer -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/STLLoader.js"></script>
+  <script>
+  function initSTLViewer(el){
+    const url = el.dataset.stl, w = el.clientWidth, h = 360;
+    const scene = new THREE.Scene();
+    const cam = new THREE.PerspectiveCamera(45, w/h, 0.1, 1000);
+    const ren = new THREE.WebGLRenderer({antialias:true,alpha:true});
+    ren.setSize(w,h); el.appendChild(ren.domElement);
+    scene.add(new THREE.HemisphereLight(0xffffff,0x444444,1));
+    const dir = new THREE.DirectionalLight(0xffffff,0.6); dir.position.set(3,5,7); scene.add(dir);
+    const grid = new THREE.GridHelper(10,10); grid.position.y = -1; scene.add(grid);
+    cam.position.set(3,2,6);
+    const ctl = new THREE.OrbitControls(cam, ren.domElement);
+    new THREE.STLLoader().load(url, geo=>{
+      geo.center(); const mtl = new THREE.MeshStandardMaterial({metalness:0.1,roughness:0.8});
+      scene.add(new THREE.Mesh(geo, mtl)); animate();
+    });
+    function animate(){ requestAnimationFrame(animate); ctl.update(); ren.render(scene,cam); }
+  }
+  document.addEventListener('DOMContentLoaded',()=>{ document.querySelectorAll('[data-stl]').forEach(initSTLViewer); });
+  </script>
+  <h3>Install steps</h3>
+  <ol>
+    <li>Inspect your original part and measure key dimensions.</li>
+    <li>Test fit gently; if tight/loose, request a free reprint revision.</li>
+    <li>Confirm operation and keep the revision label for future reprints.</li>
+  </ol>
+  <h3>FAQ</h3>
+  <p><strong>Fit guarantee:</strong> One free reprint within 30 days; refunds exclude shipping.</p>
+</section>
+<footer><div class="container"><small class="dim">Compatible replacement part. Not OEM. Not for load-bearing, food-contact, or electrical applications. We honor creator licenses and promptly remove reported items.</small></div></footer>
